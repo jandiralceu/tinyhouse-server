@@ -782,15 +782,11 @@ const seed = async () => {
 
     const db = await connectDatabase();
 
-    for (const listing of listings) {
-      await db.listings.insertOne(listing);
-    }
-
-    for (const user of users) {
-      await db.users.insertOne(user);
-    }
+    await db.listings.insertMany(listings);
+    await db.users.insertMany(users);
 
     console.log("[seed]: success");
+    process.exit()
   } catch (e) {
     throw new Error("Failed to seed database");
   }

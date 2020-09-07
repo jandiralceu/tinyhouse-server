@@ -11,12 +11,13 @@ const clear = async () => {
       db.listings.find({}).toArray(),
       db.users.find({}).toArray(),
     ]).then(async ([bookings, listings, users]) => {
-        if (bookings.length) await db.bookings.drop()
-        if (listings.length) await db.listings.drop()
-        if (users.length) await db.users.drop()
-    });
+      if (bookings.length) await db.bookings.drop();
+      if (listings.length) await db.listings.drop();
+      if (users.length) await db.users.drop();
 
-    console.log("[clear]: success");
+      console.log("[clear]: success");
+      process.exit();
+    });
   } catch (e) {
     throw new Error("Failed to clear database");
   }
