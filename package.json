@@ -7,6 +7,7 @@
     "start": "nodemon src/index.ts",
     "dev": "nodemon -r dotenv/config src/index.ts",
     "seed": "ts-node -r dotenv/config temp/seed.ts",
+    "clear": "ts-node -r dotenv/config temp/clear.ts",
     "build": "tsc -p ./"
   },
   "keywords": [],

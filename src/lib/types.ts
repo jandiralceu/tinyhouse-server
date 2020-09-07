@@ -40,7 +40,7 @@ export interface User {
   name: string;
   avatar: string;
   contact: string;
-  walletID?: string;
+  walletId?: string;
   income: number;
   bookings: ObjectID[];
   listings: ObjectID[];
